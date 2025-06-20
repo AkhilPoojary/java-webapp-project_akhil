@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: akhil-eta-container
-        image: loksaieta/sa-ai-webapp
+        image: akhilsru3/my-app-akhil
         ports:
         - containerPort: 8080
 ---
