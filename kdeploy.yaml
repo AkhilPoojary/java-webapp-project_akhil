@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loksai-eta-deploy
+  name: akhil-eta-deploy
   labels:
-    app: loksai-eta-deploy-lbl
+    app: akhil-eta-deploy-lbl
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: loksai-eta-app
+      app: akhil-eta-app
   template:
     metadata:
       labels:
-        app: loksai-eta-app
+        app: akhil-eta-app
     spec:
       containers:
-      - name: loksai-eta-container
+      - name: akhil-eta-container
         image: loksaieta/sa-ai-webapp
         ports:
         - containerPort: 8080
@@ -23,13 +23,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: loksai-eta-np-service
+  name: akhil-eta-np-service
   labels:
-    app: loksai-eta-app
+    app: akhil-eta-app
 spec:
   selector:
-    app: loksai-eta-deploy-lbl
-
+    app: akhil-eta-app  # ✅ Matches the Pod label
   type: NodePort
   ports:
   - nodePort: 31028
