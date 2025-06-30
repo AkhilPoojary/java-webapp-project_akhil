@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: akhil-eta-container
-        image: akhilsru3/my-app-akhil
+        image: akhil-kube-image
         ports:
         - containerPort: 8080
 ---
@@ -28,7 +28,7 @@ metadata:
     app: akhil-eta-app
 spec:
   selector:
-    app: akhil-eta-app  # ✅ Matches the Pod label
+    app: akhil-eta-app
   type: NodePort
   ports:
   - nodePort: 31028
